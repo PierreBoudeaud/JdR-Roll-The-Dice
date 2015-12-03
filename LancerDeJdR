@@ -1,0 +1,37 @@
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+void espace(void);
+
+void main(void)
+{
+	int choixDe, nbrLancer, i;
+	do
+	{
+		srand(NULL);
+		cout << "Quel d\x82 voulez-vous lancer ? (Quitter : -1)" << endl;
+		cin >> choixDe;
+		if (choixDe != -1)
+		{
+			cout << "combien de lancer ?" << endl;
+			cin >> nbrLancer;
+			for (i = 0; i < nbrLancer; i++)
+			{
+				cout << "1d" << choixDe << " : " << rand()%choixDe+1 << endl;
+			}
+			espace();
+		}	
+	} while (choixDe != -1);
+}
+
+void espace(void)
+{
+	int espace;
+	for (espace = 0; espace < 70; espace++)
+	{
+		cout << "-";
+	}
+	cout << endl;
+}
